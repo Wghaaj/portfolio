@@ -1,0 +1,270 @@
+* {
+  margin: 0 auto;
+  padding: 0 auto;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: JetBrains;
+  src: url("/JetBrainsMono-Regular.ttf");
+}
+body {
+  background: #3C0005;
+  color: #D8DDE2;
+  font-family: "JetBrains";
+}
+
+.big-container {
+  max-width: 1250px;
+}
+.big-container svg {
+  width: 43px;
+  height: 34px;
+}
+
+.logo {
+  margin: 0;
+}
+
+.small-container {
+  max-width: 1150px;
+}
+
+.header {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 30px;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+.header li {
+  list-style: none;
+}
+
+a {
+  color: #D8DDE2;
+  text-decoration: none;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  gap: 60px;
+}
+@media screen and (max-width: 900px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 3rem;
+    gap: 0;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s ease;
+  }
+}
+
+.nav-menu.active {
+  left: 0;
+}
+
+.nav-link {
+  transition: 0.7s ease;
+}
+
+.nav-link:hover {
+  color: #FF781F;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+  .burger {
+    display: block;
+    margin: 0;
+  }
+  .burger .burger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .burger .burger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .burger .burger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease ease-in-out;
+  transition: all 0.3s ease ease-in-out;
+  background-color: #D8DDE2;
+}
+
+@media screen and (max-width: 900px) {
+  .nav-item {
+    margin: 16px 0;
+  }
+  .nav-menu.active {
+    left: 0;
+    padding: 0;
+  }
+}
+.img {
+  margin-top: 30px;
+}
+@media screen and (max-width: 900px) {
+  .img {
+    margin-top: 15px;
+  }
+}
+.img img {
+  width: 340px;
+  height: auto;
+}
+@media screen and (max-width: 900px) {
+  .img img {
+    width: 300px;
+  }
+}
+
+.info {
+  margin-left: 30px;
+}
+@media screen and (max-width: 900px) {
+  .info {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+
+main {
+  padding: 30px;
+  transition: margin-top 0.3s ease;
+}
+
+.section-title {
+  color: #FF781F;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 900px) {
+  .about .d-flex {
+    flex-direction: column;
+  }
+}
+
+.m-15 {
+  margin-top: 15px;
+}
+
+.projects, .contact {
+  margin-top: 60px;
+}
+@media screen and (max-width: 900px) {
+  .projects, .contact {
+    margin-top: 30px;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 60px;
+  grid-template-columns: auto auto;
+  margin-top: 60px;
+}
+@media screen and (max-width: 900px) {
+  .grid {
+    grid-template-columns: auto;
+    gap: 30px;
+    margin-top: 30px;
+  }
+}
+.grid .name {
+  padding: 5px 10px;
+  margin: 0;
+}
+.grid .arrow {
+  background-color: rgba(216, 221, 226, 0.5);
+  color: white;
+  width: 26px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 5px 10px;
+}
+
+.grid-item {
+  border: 1px solid #000000;
+  border-radius: 15px;
+}
+.grid-item:hover a {
+  color: #FF781F;
+  transition: 0.3s ease;
+}
+
+.grid-img {
+  width: 379px;
+  height: auto;
+  border-radius: 15px;
+}
+@media screen and (max-width: 900px) {
+  .grid-img {
+    width: 300px;
+  }
+}
+
+.contact-details {
+  margin-top: 30px;
+}
+@media screen and (max-width: 900px) {
+  .contact-details {
+    margin-top: 15px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.highlight {
+  animation: highlight 1.3s ease-in-out;
+  border-radius: 15px;
+}
+
+@keyframes highlight {
+  0% {
+    background-color: rgba(255, 120, 31, 0.2);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 11px;
+  padding-top: 15px;
+}
+
+.effect {
+  color: #FF781F;
+}/*# sourceMappingURL=main.css.map */

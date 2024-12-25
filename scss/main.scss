@@ -1,0 +1,279 @@
+@use 'variables' as *;
+
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: JetBrains;
+    src: url('/JetBrainsMono-Regular.ttf');
+}
+
+body {
+    background: $bg-color;
+    color: $main-text;
+    font-family: 'JetBrains';
+}
+
+.big-container {
+    max-width: $big-container-width;
+
+    svg {
+        width: 43px;
+        height: 34px;
+    }
+}
+
+.logo {
+    margin: 0;
+}
+
+.small-container {
+    max-width: $small-container-width;
+}
+
+.header {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    padding: 5px 30px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+
+    li {
+        list-style: none;
+    }
+}
+
+a {
+    color: $main-text;
+    text-decoration: none;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu {
+    gap: $common-margin;
+
+    @media screen and (max-width: 900px) {
+        position: fixed;
+        left: -100%; 
+        top: 3rem;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease;
+    }
+}
+
+.nav-menu.active {
+    left: 0; 
+}
+
+.nav-link {
+    transition: 0.7s ease;
+}
+
+.nav-link:hover {
+    color: $effects;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+
+    @media screen and (max-width: 900px) {
+        display: block;
+        margin: 0;
+
+        .burger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .burger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .burger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    }
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease ease-in-out;
+    transition: all 0.3s ease ease-in-out;
+    background-color: $main-text;
+}
+
+@media screen and (max-width:900px) {
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+        padding: 0;
+    }
+}
+
+.img {
+    margin-top: 30px;
+
+    @media screen and (max-width:900px) {
+        margin-top: 15px;
+    }
+    img {
+        width: 340px;
+        height: auto;
+
+        @media screen and (max-width:900px) {
+            width: 300px;
+        }
+    }
+}
+
+.info {
+    margin-left: calc($common-margin / 2);
+
+    @media screen and (max-width:900px) {
+        margin-left: 0;
+        margin-top: calc($common-margin / 2);
+    }
+}
+
+main {
+    padding:calc($common-margin / 2);
+    transition: margin-top 0.3s ease;
+}
+
+.section-title {
+    color: $effects;
+    font-size: 24px;
+}
+
+.about {
+    @media screen and (max-width: 900px) {
+        .d-flex {
+            flex-direction: column;
+        }
+    }
+}
+
+.m-15 {
+    margin-top: 15px;
+}
+
+.projects, .contact {
+    margin-top: $common-margin;
+
+    @media screen and (max-width:900px) {
+        margin-top: calc($common-margin / 2);
+    }
+}
+
+.grid {
+    display: grid;
+    gap: $common-margin;
+    grid-template-columns: auto auto;
+    margin-top: $common-margin;
+
+    @media screen and (max-width:900px) {
+        grid-template-columns: auto;
+        gap: calc($common-margin / 2);
+        margin-top: calc($common-margin / 2);
+    }
+
+    .name {
+        padding: 5px 10px;
+        margin: 0;
+    }
+
+    .arrow {
+        background-color: rgba($color: #D8DDE2, $alpha: 0.5);
+        color: white;
+        width: 26px;
+        height: 25px;
+        border-radius: 50%;
+        text-align: center;
+        margin: 5px 10px;
+    }
+}
+
+.grid-item {
+    border: 1px solid $black-bg;
+    border-radius: 15px;
+
+    &:hover {
+        a {
+            color: $effects;
+            transition: 0.3s ease;
+        }
+    }
+}
+
+.grid-img {
+    width: 379px;
+    height: auto;
+    border-radius: 15px;
+
+    @media screen and (max-width:900px) {
+        width: 300px;
+    }
+}
+
+.contact-details {
+    margin-top: calc($common-margin / 2);
+
+    @media screen and (max-width:900px) {
+        margin-top: 15px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.highlight {
+    animation: highlight 1.3s ease-in-out;
+    border-radius: 15px;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: rgba($color: $effects, $alpha: 0.2);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+footer {
+    background-color: rgba($color: $black-bg, $alpha: 0.5);
+    padding: calc($common-margin / 2);
+    padding-bottom: 10px;
+    text-align: center;
+
+   
+}
+
+.copyright {
+    font-size: 11px;
+    padding-top: 15px;
+}
+
+.effect {
+    color: $effects;
+}

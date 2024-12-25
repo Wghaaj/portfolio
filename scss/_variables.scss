@@ -1,0 +1,12 @@
+$big-container-width: 1250px;
+$small-container-width: 1150px;
+$common-margin:60px;
+$bg-color: #3C0005;
+$black-bg: #000000;
+$elements-bg: #761106;
+$effects: #FF781F;
+$main-text: #D8DDE2;
+
+@media screen and (max-width: 900px) {
+    $common-margin:30px;
+}
