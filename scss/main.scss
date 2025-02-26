@@ -132,15 +132,18 @@ a {
 .img {
     margin-top: 30px;
 
-    @media screen and (max-width:900px) {
-        margin-top: 15px;
-    }
     img {
         width: 340px;
         height: auto;
+    }
+    @media screen and (max-width:900px) {
+        margin-top: 15px;
 
-        @media screen and (max-width:900px) {
-            width: 300px;
+    }
+
+    @media screen and (max-width: 435px) {
+        img {
+            width: 100%;
         }
     }
 }
@@ -185,15 +188,12 @@ main {
 }
 
 .grid {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: $common-margin;
-    grid-template-columns: auto auto;
-    margin-top: $common-margin;
 
-    @media screen and (max-width:900px) {
-        grid-template-columns: auto;
+    @media screen and (max-width:500px) {
         gap: calc($common-margin / 2);
-        margin-top: calc($common-margin / 2);
     }
 
     .name {
@@ -229,8 +229,8 @@ main {
     height: auto;
     border-radius: 15px;
 
-    @media screen and (max-width:900px) {
-        width: 300px;
+    @media screen and (max-width:500px) {
+        width: 100%;
     }
 }
 
@@ -276,4 +276,12 @@ footer {
 
 .effect {
     color: $effects;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.pt-10 {
+    padding-top: 10px;
 }

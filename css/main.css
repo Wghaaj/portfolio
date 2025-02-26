@@ -126,18 +126,18 @@ a {
 .img {
   margin-top: 30px;
 }
-@media screen and (max-width: 900px) {
-  .img {
-    margin-top: 15px;
-  }
-}
 .img img {
   width: 340px;
   height: auto;
 }
 @media screen and (max-width: 900px) {
+  .img {
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width: 435px) {
   .img img {
-    width: 300px;
+    width: 100%;
   }
 }
 
@@ -181,16 +181,13 @@ main {
 }
 
 .grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 60px;
-  grid-template-columns: auto auto;
-  margin-top: 60px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 500px) {
   .grid {
-    grid-template-columns: auto;
     gap: 30px;
-    margin-top: 30px;
   }
 }
 .grid .name {
@@ -221,9 +218,9 @@ main {
   height: auto;
   border-radius: 15px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 500px) {
   .grid-img {
-    width: 300px;
+    width: 100%;
   }
 }
 
@@ -267,4 +264,12 @@ footer {
 
 .effect {
   color: #FF781F;
-}/*# sourceMappingURL=main.css.map */
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
